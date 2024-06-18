@@ -12,7 +12,7 @@ struct CacheEntry {
 	std::string pathName;  // e.g. "path/to/file.txt" 
 	std::ifstream *file;   // ptr to the file in memory	
 	uint8_t lastUsed;      // time at which the entry was last accessed
-	
+	bool inUse;
 };
 
 
@@ -65,7 +65,7 @@ int Cache::evict() {
 	}
 
 	// remove the lru entry from the cache
-	cache[index].;
+	cache[index].inUse = 0;
 	return 0;
 }
 
@@ -94,10 +94,10 @@ int Cache::add(std::string pathName, std::ifstream* file) {
 }
 
 
-std::fstream* Cache::find(std::string pathName) {
+std::ifstream* Cache::find(std::string pathName) {
 	
 	// returns a ptr to a file if in the cache
 	
-	
+	return 0;
 
 }
